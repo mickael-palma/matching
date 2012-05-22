@@ -60,7 +60,7 @@ module Matching
 
 	def remove_non_utf8_characters
 	  ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
-	  ic.iconv(self).gsub(/\U+FFC2\U+FFA0/, ' ')
+	  ic.iconv(self)
 	end
 
 	def change_all_characters_to_lowercase
@@ -68,7 +68,7 @@ module Matching
 	end
 
 	def remove_punctuation_and_control_characters
-		self.gsub(/\p{Punct}|\p{Cntrl}|/, ' ')
+		self.gsub(/\p{Punct}|\p{Cntrl}/, ' ')
 	end
 
 	def split_string_into_whitespace_separated_tokens
