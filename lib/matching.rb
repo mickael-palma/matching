@@ -61,7 +61,7 @@ module Matching
 	end
 
 	def remove_punctuation_and_control_characters
-		self.gsub(/\p{Punct}|\p{Cntrl}/, ' ')
+		self.gsub(/\W/, ' ')
 	end
 
 	def split_string_into_whitespace_separated_tokens
